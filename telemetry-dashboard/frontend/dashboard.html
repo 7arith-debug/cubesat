@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131219">
+  <title>Mission Design Report | Horizon-1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <script defer src="/js/api-client.js"></script>
+  <script defer src="/js/charts.js"></script>
+  <script defer src="/js/power-budget.js"></script>
+  <script defer src="/js/ws-client.js"></script>
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="dashboard-header">
+      <a class="brand" href="/" aria-label="Horizon-1 home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>HORIZON<span class="brand-dash">/</span>01</span>
+      </a>
+      <div class="page-title"><strong>Mission design report</strong><span>ROCKET.ORK.PDF / DESIGN SNAPSHOT</span></div>
+      <div class="header-actions">
+        <a class="link-home" href="/">← 3D viewer</a>
+        <span class="connection" id="connection-state"><i class="status-dot"></i><span>CONNECTING</span></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="mission-report" aria-labelledby="mission-report-title">
+        <div class="section-heading">
+          <div><span class="section-kicker">MISSION DESIGN / SOURCE: ROCKET.ORK.PDF</span><h2 id="mission-report-title">Every budget closes.</h2></div>
+          <span class="report-status">READY FOR PRELIMINARY DESIGN REVIEW</span>
+        </div>
+        <p class="report-intro">This design would survive a preliminary design review.</p>
+
+        <div class="report-readiness" aria-label="Mission design readiness">
+          <div class="readiness-card"><span>COMPONENTS</span><strong>12</strong><small>0 failing · 0 tight · 0 not started</small></div>
+          <div class="readiness-card"><span>CONOPS</span><strong>95 <small>min</small></strong><small>Mode total · difference +0.0 min</small></div>
+          <div class="readiness-card"><span>DATA BUDGET</span><strong>162.8 <small>KB/day</small></strong><small>Stored · 161.2 KB/day</small></div>
+          <div class="readiness-card"><span>POWER BUDGET</span><strong>1,182 <small>mW peak</small></strong><small>Generated · 2,200 mW</small></div>
+          <div class="readiness-card"><span>MASS &amp; VOLUME</span><strong>0.370 <small>kg</small></strong><small>Volume · 332 cm³</small></div>
+          <div class="readiness-card"><span>COST BUDGET</span><strong>290 <small>AED</small></strong><small>Budget · 3,000 AED</small></div>
+        </div>
+
+        <section class="report-block" aria-labelledby="margins-title">
+          <div class="report-block-heading">
+            <div><span class="section-kicker">RESOURCE HEADROOM</span><h3 id="margins-title">Margins</h3></div>
+            <p>What you have left of every resource, and what that means.</p>
+          </div>
+          <div class="margin-grid">
+            <article class="margin-card"><div><h4>Storage</h4><strong>2,096,991 <small>KB</small></strong></div><p>2,096,991 KB spare after storing 161.2 KB/day.</p></article>
+            <article class="margin-card"><div><h4>Power (peak)</h4><strong>1,018 <small>mW</small></strong></div><p>1,018 mW of headroom at peak load.</p></article>
+            <article class="margin-card"><div><h4>Mass</h4><strong>0.96 <small>kg</small></strong></div><p>0.960 kg spare of 1.33 kg.</p></article>
+            <article class="margin-card"><div><h4>Volume</h4><strong>668.26 <small>cm³</small></strong></div><p>668 cm³ spare — before harness and brackets, which typically take another 20–30%.</p></article>
+            <article class="margin-card"><div><h4>Cost</h4><strong>2,710 <small>AED</small></strong></div><p>2,710 AED of 3,000 AED left.</p></article>
+          </div>
+        </section>
+
+        <section class="report-block" aria-labelledby="subsystem-title">
+          <div class="report-block-heading">
+            <div><span class="section-kicker">BUDGET BY SUBSYSTEM</span><h3 id="subsystem-title">Subsystem breakdown</h3></div>
+            <p>Power, mass, and cost allocations from the source report.</p>
+          </div>
+          <div class="allocation-grid">
+            <article class="allocation-panel">
+              <h4>Power by subsystem <span>1,182 mW</span></h4>
+              <table><thead><tr><th>Subsystem</th><th>Power</th><th>Share</th></tr></thead><tbody>
+                <tr><th scope="row">CDHS</th><td>264.0 mW</td><td>22%</td></tr>
+                <tr><th scope="row">COMMS</th><td>396.0 mW</td><td>34%</td></tr>
+                <tr><th scope="row">EPS</th><td>22.0 mW</td><td>2%</td></tr>
+                <tr><th scope="row">Payload</th><td>500.0 mW</td><td>42%</td></tr>
+                <tr><th scope="row">Structure</th><td>0.0 mW</td><td>0%</td></tr>
+              </tbody></table>
+            </article>
+            <article class="allocation-panel">
+              <h4>Mass by subsystem <span>370.0 g</span></h4>
+              <table><thead><tr><th>Subsystem</th><th>Mass</th><th>Share</th></tr></thead><tbody>
+                <tr><th scope="row">CDHS</th><td>10.0 g</td><td>3%</td></tr>
+                <tr><th scope="row">COMMS</th><td>18.0 g</td><td>5%</td></tr>
+                <tr><th scope="row">EPS</th><td>85.0 g</td><td>23%</td></tr>
+                <tr><th scope="row">Payload</th><td>42.0 g</td><td>11%</td></tr>
+                <tr><th scope="row">Structure</th><td>215.0 g</td><td>58%</td></tr>
+              </tbody></table>
+            </article>
+            <article class="allocation-panel">
+              <h4>Cost by subsystem <span>290.0 AED</span></h4>
+              <table><thead><tr><th>Subsystem</th><th>Cost</th><th>Share</th></tr></thead><tbody>
+                <tr><th scope="row">CDHS</th><td>30.0 AED</td><td>10%</td></tr>
+                <tr><th scope="row">COMMS</th><td>39.0 AED</td><td>13%</td></tr>
+                <tr><th scope="row">EPS</th><td>81.0 AED</td><td>28%</td></tr>
+                <tr><th scope="row">Payload</th><td>80.0 AED</td><td>28%</td></tr>
+                <tr><th scope="row">Structure</th><td>60.0 AED</td><td>21%</td></tr>
+              </tbody></table>
+            </article>
+          </div>
+        </section>
+
+        <section class="report-block simplifications" aria-labelledby="simplifications-title">
+          <div class="report-block-heading">
+            <div><span class="section-kicker">MODEL SCOPE</span><h3 id="simplifications-title">What this model simplifies</h3></div>
+            <p>Knowing the limits of your analysis is part of knowing how to use it.</p>
+          </div>
+          <ul>
+            <li>The link budget is a teaching model. It accounts for transmit power, satellite antenna gain, free-space path loss and thermal noise — and omits ground-station antenna gain, system G/T, pointing and polarisation losses, and atmospheric absorption. A real link budget has twenty more lines.</li>
+            <li>System noise temperature is fixed at 290 K, and noise bandwidth is approximated by the data rate. Both are reasonable first-order choices and neither is exact.</li>
+            <li>Distance to the ground station is a fixed assumed range, not a real slant range that changes through a pass. A real link is weakest at the horizon and strongest overhead.</li>
+            <li>Volume is a sum of component bounding boxes with no packing factor. Real integration loses 20–30% to harness, brackets and clearance, so a design that just fits here does not fit in reality.</li>
+            <li>Costs are indicative component prices converted at a fixed rate. They exclude launch, integration, testing, licensing and ground segment, which on a real CubeSat usually cost more than the parts.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="telemetry-strip" aria-label="Live telemetry status">
+        <div class="sensor-ident">
+          <div class="sensor-icon" aria-hidden="true">⌁</div>
+          <div><strong>EPS / power bus</strong><span id="component-config">-- COMPONENTS · -- mW LOAD</span><span id="frame-info">AWAITING FIRST FRAME</span></div>
+        </div>
+        <div class="live-metric"><label>Battery voltage</label><strong id="battery-voltage">--</strong><small>V</small></div>
+        <div class="live-metric"><label>State of charge</label><strong id="battery-soc">--</strong><small>%</small></div>
+        <div class="live-metric"><label>Solar power</label><strong id="solar-power">--</strong><small>W</small></div>
+        <div class="live-metric"><label>Battery temp</label><strong id="battery-temp">--</strong><small>°C</small></div>
+        <span class="status-pill" id="eps-status">OK</span>
+      </section>
+
+      <section aria-labelledby="sizing-title">
+        <div class="section-heading">
+          <div><span class="section-kicker">LIVE EPS / SIMULATED TELEMETRY</span><h2 id="sizing-title">Power at a glance</h2></div>
+          <span class="mono" id="cell-spec">CELL OUTPUT · -- W</span>
+        </div>
+        <div class="sizing-grid">
+          <article class="stat-card"><div class="stat-label">Power per solar cell</div><div class="stat-value"><span id="cell-power">--</span><small>W</small></div><div class="stat-note">Nominal at peak illumination</div></article>
+          <article class="stat-card primary"><div class="stat-label">Generated power</div><div class="stat-value"><span id="generated-power">--</span><small>W</small></div><div class="stat-note"><span id="selected-cell-display">--</span> active cells</div></article>
+          <article class="stat-card"><div class="stat-label">Total consumption</div><div class="stat-value"><span id="consumed-power">--</span><small>W</small></div><div class="stat-note" id="component-count">-- components online</div></article>
+          <article class="stat-card positive" id="margin-card"><div class="stat-label">Power margin</div><div class="stat-value"><span id="power-margin">--</span><small>W</small></div><div class="stat-note">Generated − consumed</div></article>
+        </div>
+        <div class="design-panel">
+          <div class="design-copy"><strong>Solar panel design</strong><span>Set the number of cells in this array</span></div>
+          <label class="cell-input-wrap" for="cell-count"><input id="cell-count" type="number" min="1" max="10000" step="1" value="8" aria-label="Selected number of solar cells"><span>CELLS</span></label>
+          <div class="budget-message" id="budget-message" role="status">Checking solar array against load…</div>
+        </div>
+      </section>
+
+      <section class="summary-section" aria-labelledby="summary-title">
+        <div class="section-heading"><div><span class="section-kicker">02 / ORBITAL ENERGY</span><h2 id="summary-title">Mission summary</h2></div><span class="mono" id="orbit-spec">ORBIT DURATION · -- H</span></div>
+        <div class="summary-grid">
+          <div class="summary-tile"><label>Total power</label><strong><span id="summary-mw">--</span> <small>mW</small></strong></div>
+          <div class="summary-tile"><label>Average load</label><strong><span id="summary-w">--</span> <small>W</small></strong></div>
+          <div class="summary-tile"><label>Energy / orbit</label><strong><span id="summary-orbit">--</span> <small>mWh</small></strong></div>
+          <div class="summary-tile"><label>Orbits / day</label><strong><span id="summary-orbits">--</span></strong></div>
+          <div class="summary-tile"><label>Energy / day</label><strong><span id="summary-day">--</span> <small>mWh</small></strong></div>
+        </div>
+      </section>
+
+      <section class="charts-section" aria-labelledby="charts-title">
+        <div class="section-heading"><div><span class="section-kicker">03 / LOAD PROFILE</span><h2 id="charts-title">Where the power goes</h2></div><span class="mono">STATIC COMPONENT BUDGET</span></div>
+        <div class="chart-grid">
+          <article class="chart-panel"><div class="chart-head"><h3>Draw by subsystem</h3><span>mW</span></div><div class="chart-wrap"><canvas id="subsystem-chart" aria-label="Power draw by subsystem" role="img"></canvas><div class="chart-center"><strong id="chart-total">--</strong><span>mW TOTAL</span></div></div></article>
+          <article class="chart-panel"><div class="chart-head"><h3>Top component energy / orbit</h3><span>mWh</span></div><div class="chart-wrap"><canvas id="component-chart" aria-label="Top components by energy per orbit" role="img"></canvas></div></article>
+          <article class="chart-panel"><div class="chart-head"><h3>Array output vs. load</h3><span>W</span></div><div class="chart-wrap"><canvas id="balance-chart" aria-label="Generated and consumed power comparison" role="img"></canvas><div class="chart-center"><strong id="balance-margin">--</strong><span>W MARGIN</span></div></div></article>
+        </div>
+      </section>
+      <footer class="footer-note"><span>HORIZON-1 / EPS TELEMETRY SIMULATION</span><span id="last-updated">WAITING FOR DATA</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="save-toast" role="status">Solar cell count saved</div>
+</body>
+</html>

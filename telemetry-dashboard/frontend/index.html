@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111118">
+  <title>Horizon-1 | CubeSat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script defer src="/js/viewer.js"></script>
+</head>
+<body class="viewer-page">
+  <header class="topbar viewer-topbar">
+    <a class="brand" href="/" aria-label="Horizon-1 home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>HORIZON<span class="brand-dash">/</span>01</span>
+    </a>
+    <div class="topbar-meta"><span class="eyebrow">1U CUBESAT PROTOTYPE</span><span class="status-dot"></span><span class="mono">SYSTEM NOMINAL</span></div>
+    <a class="button button-outline" href="/dashboard">EPS dashboard <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="viewer-main">
+    <section class="viewer-copy" aria-labelledby="hero-title">
+      <p class="eyebrow accent-text"><span class="eyebrow-rule"></span> HORIZON-1 · UAE</p>
+      <h1 id="hero-title">Small satellite.<br><em>Wide horizon.</em></h1>
+      <p class="hero-description">A 1U platform built to observe, connect, and learn in low Earth orbit.</p>
+      <a class="button button-primary" href="/dashboard">View power systems <span aria-hidden="true">↗</span></a>
+      <div class="hero-specs" aria-label="Platform specifications">
+        <div><span class="mono">01U</span><span>FORM FACTOR</span></div>
+        <div><span class="mono">LEO</span><span>ORBIT CLASS</span></div>
+        <div><span class="mono">4</span><span>CORE SYSTEMS</span></div>
+      </div>
+    </section>
+
+    <section class="model-stage" aria-label="Interactive CubeSat model">
+      <div class="stage-grid" aria-hidden="true"></div>
+      <div class="stage-orbit stage-orbit-a" aria-hidden="true"></div>
+      <div class="stage-orbit stage-orbit-b" aria-hidden="true"></div>
+      <div class="stage-label stage-label-top"><span class="stage-index">01</span><span>FLIGHT CONFIGURATION</span></div>
+      <model-viewer id="satellite-model" src="/assets/cubesat.glb" alt="3D model of the Horizon-1 CubeSat prototype" camera-controls camera-orbit="35deg 68deg auto" auto-rotate auto-rotate-delay="0" rotation-per-second="16deg" exposure="1.15" shadow-intensity="1.15" environment-image="neutral" interaction-prompt="none" ar>
+        <div class="model-loading" slot="progress-bar"><span></span></div>
+      </model-viewer>
+      <div class="model-caption"><span class="caption-marker"></span><span>HORIZON-1 / FLIGHT MODEL</span><span class="mono">01.0</span></div>
+      <div class="stage-label stage-label-bottom"><span>DRAG TO ORBIT</span><span class="mono">360°</span></div>
+    </section>
+  </main>
+  <footer class="viewer-footer"><span>ENGINEERED FOR THE ORBIT AHEAD</span><span class="mono">25° 12′ N&nbsp; / &nbsp;55° 16′ E</span><span class="footer-line"></span></footer>
+</body>
+</html>
